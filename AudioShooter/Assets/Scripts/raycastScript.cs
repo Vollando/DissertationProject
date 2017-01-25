@@ -22,10 +22,11 @@ public class raycastScript : MonoBehaviour {
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        Vector3 cameraRadius = new Vector3(-2, 0, 0);
 
         CharacterController charContr = GetComponent<CharacterController>();
-        Vector3 p1 = transform.position + charContr.center + Vector3.left * -charContr.height * 0.5f;
-        Vector3 p2 = p1 + Vector3.left * charContr.height;
+        Vector3 p1 = transform.position + charContr.center + cameraRadius * -charContr.height * 0.5f;
+        Vector3 p2 = p1 + cameraRadius * charContr.height;
         float distanceToObstacle = 0;
 
         if (Physics.Raycast(ray, out hit, 5.0f))
