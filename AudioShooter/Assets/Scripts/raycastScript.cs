@@ -10,12 +10,13 @@ public class raycastScript : MonoBehaviour {
     public AudioClip proximityAudio;
 
     public float newDistance;
+    public float audiovolume = 0.5f;
 
     // Use this for initialization
     void Start ()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.0f;
+        audioSource.volume = audiovolume;
     }
 
     // Update is called once per frame
@@ -51,7 +52,7 @@ public class raycastScript : MonoBehaviour {
             newDistance = distanceToObstacle - hit.distance;
             for (int i = 0; i < newDistance; i++)
             {
-                
+                audiovolume = newDistance;
                 audioSource.clip = proximityAudio;
                 audioSource.Play();
             }
