@@ -689,6 +689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2faeb0cf0b051d64a917bef4ac8be2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  proximityAudio: {fileID: 8300000, guid: 676c33d28445458499428bf3dde9fbea, type: 3}
+  newDistance: 0
 --- !u!20 &1778478640
 Camera:
   m_ObjectHideFlags: 0

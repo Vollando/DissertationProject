@@ -6,11 +6,17 @@ public class raycastScript : MonoBehaviour {
 
     CharacterController charCtrl;
 
-	// Use this for initialization
-	void Start ()
-    {
+    AudioSource audioSource;
+    public AudioClip proximityAudio;
 
-	}
+    public float newDistance;
+
+    // Use this for initialization
+    void Start ()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.0f;
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,7 +33,8 @@ public class raycastScript : MonoBehaviour {
         CharacterController charContr = GetComponent<CharacterController>();
         Vector3 p1 = transform.position + charContr.center + cameraRadius * -charContr.height * 0.5f;
         Vector3 p2 = p1 + cameraRadius * charContr.height;
-        float distanceToObstacle = 0;
+        float distanceToObstacle = 5;
+      
 
         if (Physics.Raycast(ray, out hit, 5.0f))
         {
@@ -41,9 +48,17 @@ public class raycastScript : MonoBehaviour {
 
         if (Physics.CapsuleCast(p1, p2, charContr.radius, transform.forward, out hit, 5))
         {
-            distanceToObstacle = hit.distance;
-            Debug.Log(hit.distance);
+            newDistance = distanceToObstacle - hit.distance;
+            for (int i = 0; i < newDistance; i++)
+            {
+                
+                audioSource.clip = proximityAudio;
+                audioSource.Play();
+            }
+            Debug.Log(newDistance);
         }
+
+       
 
     }
 }
