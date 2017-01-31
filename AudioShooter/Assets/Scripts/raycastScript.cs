@@ -43,6 +43,8 @@ public class raycastScript : MonoBehaviour {
             if (hit.collider.gameObject.tag == "Player")
             {
                 Debug.Log("aiming at other player!");
+                audioSource.clip = proximityAudio;
+                audioSource.Play();
             }
         }
         else Debug.Log("");
@@ -53,8 +55,6 @@ public class raycastScript : MonoBehaviour {
             for (int i = 0; i < newDistance; i++)
             {
                 audiovolume = newDistance;
-                audioSource.clip = proximityAudio;
-                audioSource.Play();
             }
             Debug.Log(newDistance);
         }
