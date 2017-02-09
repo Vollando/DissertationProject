@@ -5,6 +5,7 @@ public class playerSetupScript : NetworkBehaviour {
 
     [SerializeField]
     Behaviour[] componenetsToDisable;
+    public Behaviour PlayerComponentToDisable;
 
     Camera sceneCamera;
 
@@ -15,6 +16,7 @@ public class playerSetupScript : NetworkBehaviour {
             for (int i = 0; i < componenetsToDisable.Length; i++)
             {
                 componenetsToDisable[i].enabled = false;
+                PlayerComponentToDisable.enabled = false;
             }
         }
         else
