@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4992025326915066}
   - component: {fileID: 82186714413421650}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ProximityAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,7 +211,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 676c33d28445458499428bf3dde9fbea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.14
+  m_Volume: 0.485
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -219,8 +219,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 5
+  MinDistance: 0.1
+  MaxDistance: 1
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

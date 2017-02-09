@@ -16,11 +16,11 @@ public class playerSetupScript : NetworkBehaviour {
             for (int i = 0; i < componenetsToDisable.Length; i++)
             {
                 componenetsToDisable[i].enabled = false;
-                PlayerComponentToDisable.enabled = false;
             }
         }
         else
         {
+            PlayerComponentToDisable.enabled = false;
             sceneCamera = Camera.main;
             if (sceneCamera != null)
             {
