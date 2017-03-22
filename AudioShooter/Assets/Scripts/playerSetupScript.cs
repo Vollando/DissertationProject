@@ -13,10 +13,7 @@ public class playerSetupScript : NetworkBehaviour {
     {
         if (!isLocalPlayer)
         {
-            for (int i = 0; i < componenetsToDisable.Length; i++)
-            {
-                componenetsToDisable[i].enabled = false;
-            }
+            DisableComponents();
         }
         else
         {
@@ -26,6 +23,14 @@ public class playerSetupScript : NetworkBehaviour {
             {
                 Camera.main.gameObject.SetActive(false);
             }
+        }
+    }
+
+    void DisableComponents ()
+    {
+        for (int i = 0; i < componenetsToDisable.Length; i++)
+        {
+            componenetsToDisable[i].enabled = false;
         }
     }
 
