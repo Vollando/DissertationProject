@@ -594,7 +594,9 @@ MonoBehaviour:
   - {fileID: 114342523287291092}
   - {fileID: 20722471632581676}
   - {fileID: 81845736172013132}
+  - {fileID: 114007408399096830}
   PlayerComponentToDisable: {fileID: 82186714413421650}
+  remoteLayerName: 9
 --- !u!124 &124363209081339844
 Behaviour:
   m_ObjectHideFlags: 1
