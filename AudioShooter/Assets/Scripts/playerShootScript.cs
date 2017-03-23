@@ -50,6 +50,6 @@ public class playerShootScript : NetworkBehaviour {
         Debug.Log(_playerID + " has been shot.");
 
         playerManagerScript _player = gameManagerScript.GetPlayer(_playerID);
-        _player.TakeDamage(_damage);
+        _player.RpcTakeDamage(_damage);
     }
 }
