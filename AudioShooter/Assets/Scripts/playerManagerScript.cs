@@ -76,7 +76,18 @@ public class playerManagerScript : NetworkBehaviour {
 
         Debug.Log(transform.name + " is Dead!");
 
-        // Call Respawn Method
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn ()
+    {
+        yield return new WaitForSeconds(1f);
+
+        SetDefaults();
+        Transform _spawnPoint = NetworkManager.singleton.GetStartPosition();
+        transform.position = _spawnPoint.position;
+        transform.rotation = _spawnPoint.rotation;
+
     }
 
     public void SetDefaults()
