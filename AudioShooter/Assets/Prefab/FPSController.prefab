@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 114430071156041834}
   - component: {fileID: 23304159958975044}
   - component: {fileID: 114007408399096830}
+  - component: {fileID: 114894485173140650}
   m_Layer: 8
   m_Name: FPSController
   m_TagString: Player
@@ -597,6 +598,17 @@ MonoBehaviour:
   - {fileID: 114007408399096830}
   PlayerComponentToDisable: {fileID: 82186714413421650}
   remoteLayerName: 9
+--- !u!114 &114894485173140650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846774696239000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953c360fd9a8f614aa1097bbe17cd571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124363209081339844
 Behaviour:
   m_ObjectHideFlags: 1
