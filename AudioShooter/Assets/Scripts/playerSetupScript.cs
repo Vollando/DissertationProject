@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
+[RequireComponent(typeof(playerManagerScript))]
 public class playerSetupScript : NetworkBehaviour {
 
     [SerializeField]
@@ -28,15 +29,16 @@ public class playerSetupScript : NetworkBehaviour {
                 Camera.main.gameObject.SetActive(false);
             }
         }
-
-        RegisterPlayer();
-
     }
 
-    void RegisterPlayer ()
+    public override void OnStartClient()
     {
-        string _ID = "Player :" + GetComponent<NetworkIdentity>().netId;
-        transform.name = _ID;
+        base.OnStartClient();
+
+        string _netID = GetComponent<NetworkIdentity>().netId.ToString();
+        playerManagerScript _player = GetComponent<playerManagerScript>();
+
+        gameManagerScript.RegisterPlayer(_netID, _player);
     }
 
     void DisableComponents ()
@@ -57,6 +59,8 @@ public class playerSetupScript : NetworkBehaviour {
         if (sceneCamera != null)
         {
             sceneCamera.gameObject.SetActive(true);
-        }   
+        }
+
+        gameManagerScript.UnRegisterPlayer(transform.name);        
     }
 }
