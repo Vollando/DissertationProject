@@ -29,6 +29,8 @@ public class playerSetupScript : NetworkBehaviour {
                 Camera.main.gameObject.SetActive(false);
             }
         }
+
+        GetComponent<playerManagerScript>().Setup();
     }
 
     public override void OnStartClient()

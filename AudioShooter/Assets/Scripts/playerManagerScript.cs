@@ -34,6 +34,17 @@ public class playerManagerScript : NetworkBehaviour {
         SetDefaults();
     }
 
+    void Update ()
+    {
+        if (!isLocalPlayer)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            RpcTakeDamage(9999);
+        }
+    }
+
     [ClientRpc]
     public void RpcTakeDamage(int _amount)
     {
