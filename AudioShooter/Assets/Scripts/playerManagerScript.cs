@@ -88,6 +88,8 @@ public class playerManagerScript : NetworkBehaviour {
         transform.position = _spawnPoint.position;
         transform.rotation = _spawnPoint.rotation;
 
+        Debug.Log(transform.name + " respawned.");
+
     }
 
     public void SetDefaults()
